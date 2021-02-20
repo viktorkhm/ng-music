@@ -1,0 +1,11 @@
+<div class="music-list-element__cont" [ngStyle]="{'background-image':'url(' + albumElement.image[2]['#text'] + ')'}">
+    <div class="music-list-element__overlay"></div>
+    <div class="music-list-element__txt">
+        <h2 class="music-list-element__name">{{albumElement.name}}</h2>
+        <h3 class="music-list-element__h">{{albumElement.artist.name}}</h3>
+        <div class="music-list-element__heart" [class.active] = "albumElement.like.state" (click) = "likeToggle(albumElement)">
+            <i class="material-icons not-liked bouncy">favorite_border</i>
+            <i class="material-icons is-liked bouncy">favorite</i>
+        </div>
+    </div>
+</div>

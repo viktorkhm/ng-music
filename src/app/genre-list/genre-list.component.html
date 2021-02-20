@@ -1,0 +1,9 @@
+<div class="genre">
+    <div class="music-list genre-list">
+        <app-genre-list-element class="music-list-element" 
+            *ngFor="let element of genreList; let i = index;" 
+            [genreElement] = "element"
+            (click) = "navigateToTheAlboms(i, element)"> 
+        </app-genre-list-element>
+    </div>
+</div>

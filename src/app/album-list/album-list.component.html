@@ -1,0 +1,26 @@
+<section class="album">
+    <header class="header">
+        <div class="header__left">
+            <a class="header__back" (click) = "navigateToTheGenres()">Back</a>
+            <div class="header__input">
+                <input type="text" [(ngModel)]="searchName" >
+            </div>
+        </div>
+        <div class="header-like">
+            <div class="header-like__heart"></div>
+            <div class="header-like__circle">
+                <span>{{this.likes}}</span>
+            </div>
+        </div>
+    </header>
+    <div class="music-list album-list" *ngIf = "albumList.length">
+        <app-album-list-element class="music-list-element" 
+            *ngFor="let element of albumList | filterByName: searchName" 
+            [albumElement] = "element"
+            [genre] = "genreName"> 
+        </app-album-list-element>
+    </div>
+    <div class="lds-roller" *ngIf = "!albumList.length">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+</section>
